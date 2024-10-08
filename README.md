@@ -14,6 +14,15 @@ eg: `cargo run --bin variables`
 
 Each rust program is wrapped inside a `main` function. The `main` function is the entry point of the program.
 
+## Naming conventions
+
+| Convention             | Types that use it                                                               |
+| ---------------------- | ------------------------------------------------------------------------------- |
+| `snake_case`           | Crates, modules, functions, methods, local variables and parameters, lifetimes. |
+| `CamelCase`            | Types (including traits and enums), type parameters in generics.                |
+| `SCREAMING_SNAKE_CASE` | Constant and static variables.                                                  |
+
 ## Order of learning
 
 1. [Variables](src/bin/variables.rs)
+1. [Data types](src/bin/data_types.rs)
