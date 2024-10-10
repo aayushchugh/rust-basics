@@ -30,4 +30,45 @@ fn main() {
     let y: i32 = x;
 
     println!("Value of X is: {x}"); // This won't throw any error
+
+    // ownership in functions
+    let vec_1 = vec![1,2,3];
+    // takes_ownership(vec_1);
+    // println!("vec 1 is: {:?}", vec_1); // This will throw an error because ownership was
+    // transfer tto function
+
+    // we can clone value of vec_1 in takes_ownership function to bypass this error
+    takes_ownership(vec_1.clone());
+
+    let vec_2 = gives_ownership(); // this will give ownership to vec_2
+    println!("Vec 2 is {:?}", vec_2);
+
+    let vec_3 = takes_and_gives_ownership(vec_2); // this will take ownership of vec_2 and give it
+    // to vec_3
+   //  println!("Vec 2 is {:?}", vec_2); // this will give error because owhership of vec_2 is
+    // transfered to function
+    println!("Vac 3 is {:?}", vec_3);
+
+    // in rust ownership of primitive datatypes like int, char, bool is not transfered to functions
+    let x = 10;
+    stack_function(x);
+    println!("X in main is {x}");
+}
+
+fn takes_ownership(vec: Vec<i32>) {
+    println!("Vec is {:?}", vec);
+}
+
+fn gives_ownership() -> Vec<i32> {
+    vec![4,5,6]
+}
+
+fn takes_and_gives_ownership(mut vec: Vec<i32>) -> Vec<i32> {
+    vec.push(10);
+    vec
+}
+
+fn stack_function(mut var: i32) {
+    var = 56;
+    println!("In function, var is : {var}");
 }
