@@ -28,3 +28,4 @@ Each rust program is wrapped inside a `main` function. The `main` function is th
 1. [Data types](src/bin/data_types.rs)
 1. [Input and output](src/bin/input_output.rs)
 1. [Ownership](src/bin/ownership.rs)
+1. [Borrowing](src/bin/borrowing.rs)
